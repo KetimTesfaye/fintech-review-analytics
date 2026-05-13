@@ -1,0 +1,11 @@
+data/
+*.csv
+*.db
+
+
+venv/
+__pycache__/
+*.py[cod]
+
+.vscode/
+.idea/
