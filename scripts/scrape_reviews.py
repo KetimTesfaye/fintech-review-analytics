@@ -2,12 +2,10 @@ import pandas as pd
 from google_play_scraper import Sort, reviews
 import os
 
-print("--- 🚀 Starting Task 1: Scraper & Preprocessor ---")
+print("---Starting Task 1: Scraper & Preprocessor---")
 
-# Ensure output directory exists
 os.makedirs('data/raw', exist_ok=True)
 
-# 🎯 VERIFIED APP IDS
 target_apps = {
     'CBE': 'com.combanketh.mobilebanking',
     'BOA': 'com.boa.boaMobileBanking',
@@ -15,7 +13,7 @@ target_apps = {
 }
 
 for bank_name, app_id in target_apps.items():
-    print(f"\n--- 🏦 Processing {bank_name} ---")
+    print(f"\n---Processing {bank_name}---")
     
     try:
         # ==========================================
@@ -26,9 +24,9 @@ for bank_name, app_id in target_apps.items():
             lang='en',
             country='et',
             sort=Sort.NEWEST,
-            count=1000 
+            count=10000
         )
-        print(f"  📥 Scraped {len(result)} raw reviews.")
+        print(f"  Scraped {len(result)} raw reviews.")
         
         bank_data = []
         for rev in result:
