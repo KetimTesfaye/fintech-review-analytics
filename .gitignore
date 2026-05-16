@@ -1,11 +1,16 @@
+# Ignore all python files in the scripts folder
+scripts/*.py
+
+# EXCEPT for the scraper script
+!scripts/scrape_reviews.py
+
+# Always keep these
+!scripts/__init__.py
+!scripts/README.md
+
+# Other existing ignores
 data/
 *.csv
 *.db
-
-
 venv/
 __pycache__/
-*.py[cod]
-
-.vscode/
-.idea/
