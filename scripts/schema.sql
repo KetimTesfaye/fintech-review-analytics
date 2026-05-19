@@ -1,14 +1,12 @@
--- 1. Banks Metadata Table
 CREATE TABLE IF NOT EXISTS banks (
     bank_id SERIAL PRIMARY KEY,
     bank_name VARCHAR(100) UNIQUE NOT NULL,
     app_name VARCHAR(100)
 );
 
--- 2. Reviews Table (Persistently stores cleaned and processed data)
 CREATE TABLE IF NOT EXISTS reviews (
-    review_id VARCHAR(255) PRIMARY KEY, -- Unique ID from Google Play Store
-    bank_id INTEGER REFERENCES banks(bank_id), -- Links to Banks table via Foreign Key
+    review_id VARCHAR(255) PRIMARY KEY, 
+    bank_id INTEGER REFERENCES banks(bank_id),
     review_text TEXT NOT NULL,
     rating INTEGER CHECK (rating >= 1 AND rating <= 5),
     review_date DATE NOT NULL,
